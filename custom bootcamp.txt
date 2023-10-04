@@ -1,0 +1,586 @@
+29-08-2023
+
+database:
+it helps to store the data in easy manner and process the data using sql.
+
+types of data
+structured data  --> relational database
+semi structured data  --> json data, objects
+unstructured data --> video data and audio data
+
+dataware house --> it is a central hub where data will be stored.
+
+normalisation.
+normalisation will be used to break down the table so that redundancy of the data will be reduced.
+1NF-> there should not be the multivalued attribute.
+2NF-> has to be in the 1nf and there should not be the partial dependency.
+3NF-> has to be in the 2nf and there should not be any transitive dependency.
+
+er diagram.
+er diagram to be used while developing the tables for relational database.
+
+case study on er diagram 
+case study on the normalization.
+
+denormalisation
+denormalization means bringing back to previous normal form.
+
+slowly changing dimension
+
+scd1 there wont be any history it wont add any new rows
+
+scd2 it will add new row for each update
+ 
+scd3 it will add new column for each update 
+
+compared to all scd2 is very good
+---------------------------------------------------------------------------------
+
+
+
+30-08-2023
+
+4V's of big data
+volume
+veracity
+velocity
+variety
+
+types of processing
+batch processing
+stream processing
+
+big data will be processed 
+distributed processing -> multiple resources
+parallel  processing -> multiple resources
+
+
+
+dataware house
+----------------
+save data as object means table
+dimension modeling
+structured data
+fixed schema
+
+acid property
+atomocity
+consistency
+isolation
+durability
+
+datalake
+---------
+structured data
+unstrustured data 
+semistructured data
+flexible schema --> because we have the semistructured data
+there won't be the acid properties
+there will be meta data stored for each data stored on the datalake.
+
+lake house
+------------------------------------
+combination of dataware house and datalake
+
+AZ-900 and DP-203 are certificates for the data engineers.
+
+public cloud --> amazon and azure cloud platform
+private cloud --> company mantain their own data centers and networking.
+hybrid cloud --> combination of both private and public cloud
+
+benefits of cloud
+availability
+scalability
+elasticity
+security
+global search
+
+models of computing
+
+capex - capital expenditure
+
+opex - operational expenditure
+
+cloud is opex model
+
+iaas - it only gives infrastructure 
+example cloud will provide storage , network, and computing power
+
+paas - it gives operating system and development tools
+it includes server, network, data center and operating system and tools
+
+saas - they will give all things along with the application
+storage , server , network, operating system and application
+
+server less computing
+azure function
+azure logic app
+
+
+
+
+azure basics
+
+region selection
+region pair
+availability zone
+
+same region multiple availability zone will be there
+
+
+azure resources
+
+data factory
+data bricks
+azure sql
+
+azure subscription
+azure resource manager
+resource means service that we get from cloud
+
+resource group
+it will have multiple resources
+
+subscription -> resource group -> resource
+
+------------------------------------------------------------------------------------------
+31-08-2023
+
+Azure portal
+subscription
+launch in us east
+
+single databse
+elastic pool
+
+user
+group --> aunthetication
+
+adventure works databse to learn sql
+
+dbo is default schema
+
+schema means logical grouping of tables;
+
+ex==> dbo.employee
+
+
+01-09-2023
+
+elastic pool
+
+stored procedure we can pass parameters to stored procedure
+
+views we can not pass parameters to views 
+
+fucntions
+
+
+begin and end keywords
+begin and end keywords will be used to group the statement and commit will only happen when all statements inside the begin and end are executed
+
+
+
+temp tables
+temp tanle starts with # symbol
+
+creayte table #student -->syntax
+
+functions---->
+scalar functions
+table valued functions
+
+indexing
+CTE 
+
+create clustured index index_name on column name
+
+create nonclustured index index name on column name
+
+04-09-2023
+------------
+
+
+
+lrs
+zrs
+grs
+gzrs
+ragrs
+
+sla
+service level agreement
+
+fail over happens only in the one zone
+
+upstream -> from what source data is coming to us
+downstream -> from us where the data is going
+
+tiers of storage
+hot 
+cool 
+cold
+archive
+
+
+azure event hub can be a good replacement for the queue
+azure cosmos db can be a good replacement for the table
+
+file share
+create virtual machine
+access it using the remote desktop connection
+mount the file share on the vartual machine
+if you change any content that will be reflected on the file share on the cloud
+
+we can change snapshot of the file share and we can restore the file to original content
+
+Ingress --> pushing data to azure --> cost will be less
+egress --> taking data from the azure --> cost will be more
+
+
+pricing calculator
+total cost ownership
+
+price will vary according to place selected
+with tiers of replication
+
+static website
+
+
+05-09-2023
+---------------------
+access keys --> lofe time access
+shared access signature --> time bounded access 
+
+we can create the sas for container level and file level
+
+access keys is for the life time
+use azure key vault to store the password
+
+rbac roll based access control
+
+key vault is azure service
+within that we can store the password
+object -> secret here we can generate the password for the secret
+
+
+
+identity access management
+access control
+
+azure data factory
+etl-- extract transform load
+elt-- extract load transform
+
+azure data factory 
+------------------
+
+integration runtime - connection
+linked service - database level connection
+dataset - actual database
+
+
+
+08-09-2023
+---------------------------------
+
+
+azure runbooks
+azure monitor
+cdc
+
+
+13-09-2023
+-------------------------
+
+power bi
+power service
+mobile 
+power query
+
+
+
+15-09-2023
+-------------------------------------------
+
+
+
+
+
+21-09-2023
+---------------------------------
+driver 
+cluster manager
+worker node
+jvm
+
+py spark
+action
+lazy evalution
+show()
+write()
+
+job
+driver node
+cluster manager
+worker node
+
+based on number of actions jobs will be created.
+for each action one job will be created by the driver node.
+
+
+transformation
+----------
+1.narrow transformation --- normal where clause
+
+2.wide transformation --- group by clause --- wider transformation is very costly
+
+based on the shuffling stage will be created
+number of shuffling = number of stages
+stages can have multiple tasks
+
+one job can have multiple shufflings and each shuffling can have multiple tasks
+
+
+rdd resiliant didtributed dataset
+dag directied acyclic graph
+data storage and processing of the data.
+
+rdd is immutable and it helps in recovering the data incase of any failure
+dag directed acyclic graph for each action job will be created in the pyspark and for each job the driver node creates the dag for execution
+
+rdd do not support rows and columns
+then they went to use the dataframe
+
+then they combined features of dataframe and rdd to create the dataset
+
+caching
+-------------
+
+frequently accessed data will be stored in the cache.
+
+use df.cache() will be used to cache the data.
+memory spill problem will occur when u store more amount of data in the cache than its capacity
+
+
+all dataframe and dataset will converted into the rdd
+jobs will be submitted to the driver node
+catalog analysis will take place first
+logical plan will be take place
+optomization of logical plan
+pysical plans
+according to cost one pysical plan will selected
+
+adaptive query execution
+plan will be changed during the run time because of feedback
+
+dataframe provide the sql rich api
+
+
+rdd
+------
+map
+flatmap
+filter
+sc.parallelize
+df.rdd
+rdd.toDF
+reduceByKey
+groupbykey
+
+
+spark dataframe
+-------------------
+user defined schema for reading the dataframe
+
+
+deployment types in spark
+client mode
+cluster mode
+
+
+we can use the master option to specify the url of clusters.
+
+
+
+22-09-2023
+-----------------
+partition
+repartition
+
+
+df.rdd.getNumPartitions()
+
+
+repartition in the dataframe
+df.repartition(number)
+
+by default number of partition will be 200 in the databricks
+
+write the dataframe to the file system
+---------------------------------------
+df.write.csv(path)
+
+u can monitor the task using the spark url (spark UI)
+
+sc = spark.sparkContext
+
+sc.uiWebUrl
+
+spark session contains both sparksession and sparkcontext
+
+sparkcontext is legacy entry point to the spark engine
+
+createOrReplaceTempView()
+
+spark.sql(sql statement)
+
+selectExpr(expression, other columns)
+
+alias(name) name to give the alias name to the column
+
+cast function can be used to change the datatype of the column
+
+cast() is method of the column class
+
+selectExpr can be used to cast the datatype
+
+we can use sql to cast the datatype
+
+we can use IntegerType() while casting the datatype.
+
+
+drop duplicates can be used to drop the duplicates.
+we can specify the column names based on which we can drop the rows
+
+distinct() keyword can be used to drop the duplicates.
+
+drop() can be used to columns of the dataframe
+
+when otherwise
+concat()
+concat_ws()
+
+user defined functions
+udf()
+function to register the function to the pyspark
+
+
+25-09-2023
+------------------
+
+persist and unpersist 
+describe and describe extended
+managed table
+unmanaged table
+
+
+26-09-2023
+---------------
+%md
+# heading
+
+
+27-09-2023
+--------------------
+magic commands
+run the notebook
+
+output mode
+append
+complete
+update
+
+checkpoint
+
+
+delta table
+__deltalog__
+time travelling can be done using the delta table.
+for every change the versioning will be created 
+we can select particular versioning to travel back to particular version.
+metadata will be stored in the json file
+vaccum command can be used to select the particular date.
+
+
+
+
+hive table
+when we use parquet format then it will be created as hive table
+hive table do not support delete operation.
+
+for delta provider delta table will be created.
+
+
+medallian architecture / multihop architecture
+-------------------------------------------------
+
+
+single source of truth
+
+raw
+silver
+gold
+
+
+job means specifing notebook run
+
+jdbc connection
+
+
+Unity catalog
+---------------
+
+
+
+28-09-2023
+
+-----------------------
+cli command line interface
+
+
+create the python app
+
+app.py
+requirements.txt
+dockerfile
+
+docker build
+sudo docker build -tagname appname .
+
+docker image run
+sudo docker run appname.
+
+login to azure using the cli
+az login
+
+create the resource group using cli
+az group create --name RG_shell --location eastus
+
+create azure acr using the cli
+az acr create --name shellacr001 --resource-group RG_shell --location eastus --sku Standard
+
+login to acr using username and password
+sudo docker login shellacr001.azurecr.io
+
+tag ur docker image with version of the application
+sudo docker tag myapp shellacr001.azurecr.io/myapp:v1
+
+push the docker image to the azure acr repository
+sudo docker push shellacr001.azurecr.io/myapp:v1
+
+
+
+pyspark
+
+--------------------
+
+03-10-2023
+-------------------
+
+
+
+
+
+
+
